@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.exapplication.SlideFragment"
         android:label="fragment_slide"
-        tools:layout="@layout/fragment_slide" />
+        tools:layout="@layout/fragment_slide" >
+        <action
+            android:id="@+id/action_navigation_home_to_window"
+            app:destination="@id/window" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.exapplication.SlideFragment2"
@@ -20,4 +24,9 @@
         android:name="com.example.exapplication.SlideFragment3"
         android:label="fragment_slide3"
         tools:layout="@layout/fragment_slide3" />
+    <activity
+        android:id="@+id/window"
+        android:name="com.example.exapplication.Window"
+        android:label="activity_window"
+        tools:layout="@layout/activity_window" />
 </navigation>
