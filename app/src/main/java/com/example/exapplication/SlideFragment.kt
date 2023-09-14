@@ -18,17 +18,17 @@ class SlideFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val PereHod = view?.findViewById<Button>(R.id.perehod)
+           return inflater.inflate(R.layout.fragment_slide, container, false)
+
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val PereHod = view.findViewById<Button>(R.id.perehod)
 
         PereHod?.setOnClickListener{
-            val intent = Intent(this, Window::class.java)
+            val intent = Intent(requireContext(), Window::class.java)
             startActivity(intent)
         }
-//        return inflater.inflate(R.layout.fragment_slide, container, false)
-        return view
-    }
-
-    private fun Intent(slideFragment: SlideFragment, java: Class<Window>): Intent {
-        return TODO("Provide the return value")
     }
 }

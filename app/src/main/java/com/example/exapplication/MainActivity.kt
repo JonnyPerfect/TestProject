@@ -21,11 +21,6 @@ class MainActivity : FragmentActivity(){
         setContentView(R.layout.activity_main)
 
         val navView = findViewById<BottomNavigationView>(R.id.nav_view)
-        val Button = findViewById<Button>(R.id.perehod)
-        Button.setOnClickListener{
-            val intent = Intent(this, Window::class.java)
-            startActivity(intent)
-        }
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(setOf(
