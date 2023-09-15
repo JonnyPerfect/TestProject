@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 
 class SlideFragment : Fragment() {
 
@@ -27,8 +28,20 @@ class SlideFragment : Fragment() {
         val PereHod = view.findViewById<Button>(R.id.perehod)
 
         PereHod?.setOnClickListener{
-            val intent = Intent(requireContext(), Window::class.java)
-            startActivity(intent)
+
+            val builder = AlertDialog.Builder(requireActivity())
+            builder.setTitle("Переход в другое активити")
+                .setMessage("Для перехода нажмите ОК")
+                .setPositiveButton("OK") { _, _ ->
+                    val intent = Intent(requireContext(), Window::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton("Отмена", null)
+                .create()
+
+            val dialog = builder.create()
+            dialog.show()
         }
     }
 }
+
