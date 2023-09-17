@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DialogDate">
+
+    <TextView
+        android:id="@+id/curentTime"
+        android:layout_width="220dp"
+        android:layout_height="68dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/timeButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="изменить время"
+        android:onClick="setTime"
+        app:layout_constraintBottom_toTopOf="@id/dateButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/curentTime" />
+
+    <Button
+        android:id="@+id/dateButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Изменить дату"
+        android:onClick="setData"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

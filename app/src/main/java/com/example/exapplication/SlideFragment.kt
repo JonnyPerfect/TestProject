@@ -26,6 +26,7 @@ class SlideFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val PereHod = view.findViewById<Button>(R.id.perehod)
+        val visibilityDate = view.findViewById<Button>(R.id.VisibilDate)
 
         PereHod?.setOnClickListener{
 
@@ -42,6 +43,22 @@ class SlideFragment : Fragment() {
             val dialog = builder.create()
             dialog.show()
         }
+
+        visibilityDate?.setOnClickListener {
+            val builder = AlertDialog.Builder(requireActivity())
+            builder.setTitle("Вы уверены что хотите перейти?")
+                .setMessage("Для перехода нажмите ОК")
+                .setPositiveButton("OK") { _, _ ->
+                    val intent = Intent(requireContext(),DialogDate::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton("Отмена",null)
+                .create()
+
+            val dialog = builder.create()
+            dialog.show()
+        }
+
     }
 }
 

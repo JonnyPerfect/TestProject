@@ -13,6 +13,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".DialogDate"
+            android:exported="false" />
+        <activity
+            android:name=".DateActivity"
+            android:exported="false" />
+        <activity
             android:name=".Window"
             android:exported="false" />
         <activity
