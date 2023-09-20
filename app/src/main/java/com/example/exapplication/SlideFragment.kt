@@ -27,6 +27,7 @@ class SlideFragment : Fragment() {
 
         val PereHod = view.findViewById<Button>(R.id.perehod)
         val visibilityDate = view.findViewById<Button>(R.id.VisibilDate)
+        val animationClick = view.findViewById<Button>(R.id.animation)
 
         PereHod?.setOnClickListener{
 
@@ -59,6 +60,20 @@ class SlideFragment : Fragment() {
             dialog.show()
         }
 
+        animationClick?.setOnClickListener {
+            val builder = AlertDialog.Builder(requireActivity())
+            builder.setTitle("Вы уверены что хотите это")
+                .setMessage("ну ладно нажмите ОК")
+                .setPositiveButton("OK") { _, _ ->
+                    val intent = Intent(requireContext(), ImageActivity::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton("Отмена",null)
+                .create()
+
+            val dialog = builder.create()
+            dialog.show()
+        }
     }
 }
 
